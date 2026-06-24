@@ -1,4 +1,4 @@
 [build]
   base = "artifacts/daycare-site"
   command = "npm run build"
-  publish = "artifacts/daycare-site/dist"
+  publish = "dist"
