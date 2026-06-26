@@ -6,19 +6,19 @@ export default function HomePage() {
   const programs = [
     {
       title: "Toddler Exploration",
-      ageGroup: "11 Months – 2 Years",
+      ageGroup: "18 Months (1.5 years) – 30 months (2.5 years)",
       description: "A safe, sensory-rich environment where toddlers develop motor skills, early language, and social bonds through guided play.",
       icon: Sun,
       color: "bg-secondary/20 text-secondary-foreground"
     },
     {
       title: "Preschool Discovery",
-      ageGroup: "3 – 4 Years",
+      ageGroup: "30 months (2.5 years) – 6 Years",
       description: "Fostering independence and curiosity with structured activities in arts, bilingual communication, and basic problem-solving.",
       icon: Palette,
       color: "bg-accent/20 text-accent"
     },
-    {
+    /*{
       title: "Pre-K Readiness",
       ageGroup: "4 – 5 Years",
       description: "Preparing little minds for school with foundational literacy, numeracy, and cooperative projects in English and French.",
@@ -31,7 +31,7 @@ export default function HomePage() {
       description: "A relaxing yet engaging space for older children to unwind, complete homework, and enjoy creative group activities.",
       icon: Music,
       color: "bg-orange-500/10 text-orange-500"
-    }
+  }*/
   ];
 
   const testimonials = [

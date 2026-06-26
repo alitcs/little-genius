@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
-import logoTransparent from "@assets/IMG_0974_1782260792644.svg";
+import logoTransparent from "@assets/joe.png";
 
 export default function Footer() {
   return (
@@ -20,12 +20,12 @@ export default function Footer() {
               Where Little Minds Bloom. A warm, nurturing bilingual daycare for curious young children.
             </p>
             <div className="flex gap-4 mt-2">
-              <a href="#" className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+              <a href="https://www.facebook.com/share/1BF6qM1poT/?mibextid=wwXIfr" className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+              <a href="https://www.instagram.com/lepetitgenie26?igsh=MWd5bTVxYW1zbHk5dw%3D%3D&utm_source=qr" className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                 <Instagram size={20} />
-              </a>
+              </a>  
             </div>
           </div>
 
@@ -43,11 +43,8 @@ export default function Footer() {
           <div>
             <h3 className="font-serif text-lg font-bold mb-4 text-foreground">Programs</h3>
             <ul className="flex flex-col gap-3 font-semibold text-muted-foreground">
-              <li>Toddler (18mo - 2yr)</li>
-              <li>Preschool (3 - 4yr)</li>
-              <li>Pre-K (4 - 5yr)</li>
-              <li>After-School Care</li>
-              <li>Bilingual Learning</li>
+              <li>Toddler (1.5yr - 2.5yr)</li>
+              <li>Preschool (2.5yr - 4yr)</li>
             </ul>
           </div>
 
@@ -60,11 +57,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="text-primary shrink-0" size={20} />
-                <span>(613) 555-0123</span>
+                <span>647 712 1144</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-primary shrink-0" size={20} />
-                <span>hello@littlegeniusisland.ca</span>
+                <span>LePetitGenie26@gmail.com</span>
               </li>
             </ul>
           </div>
