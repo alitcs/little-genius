@@ -9,6 +9,7 @@ import LocationPage from "./pages/LocationPage";
 import HoursPage from "./pages/HoursPage";
 import ContactPage from "./pages/ContactPage";
 import FAQPage from "./pages/FAQPage";
+import ParentalGuidePage from "./pages/ParentalGuidePage";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -26,6 +27,7 @@ function Router() {
           <Route path="/hours" component={HoursPage} />
           <Route path="/contact" component={ContactPage} />
           <Route path="/faq" component={FAQPage} />
+          <Route path="/guide" component={ParentalGuidePage} />
           <Route component={NotFound} />
         </Switch>
       </main>
