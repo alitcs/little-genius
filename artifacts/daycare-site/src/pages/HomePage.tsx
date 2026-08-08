@@ -1,6 +1,7 @@
 import { BookOpen, Heart, Music, Palette, Star, Sun } from "lucide-react";
 import CTASection from "@/components/CTASection";
 import ProgramCard from "@/components/ProgramCard";
+import SEO from "@/components/SEO";
 import daycareVid from "@/assets/daycare-vid.mp4";
 
 export default function HomePage() {
@@ -52,8 +53,13 @@ export default function HomePage() {
 
   return (
     <div className="w-full">
+      <SEO
+        title="Little Genius Island"
+        description="Little Genius Island offers bilingual Montessori-style childcare in Ottawa for children 11 months to 6 years, with English and French early learning in a nurturing environment."
+        path="/"
+      />
       {/* Hero Section */}
-      <section className="relative pt-10 pb-20 md:pt-20 md:pb-32 px-4 overflow-hidden bg-[#EDF5E1] flex flex-row">
+      <section className="relative pt-10 pb-20 md:pt-20 md:pb-32 px-4 overflow-visible bg-[#EDF5E1] flex flex-col lg:flex-row items-center gap-10">
         <video
           autoPlay
           muted
@@ -88,7 +94,7 @@ export default function HomePage() {
               Schedule a Tour
             </a>
             <a
-              href="/programs"
+              href="#programs"
               className="bg-white text-primary border border-primary/20 hover:bg-white/90 px-8 py-4 rounded-full font-bold text-lg text-center transition-colors"
             >
               Explore Programs
@@ -97,7 +103,7 @@ export default function HomePage() {
         </div>
 
            {/* Hero Visual / Shapes */}
-         <div className="relative h-[400px] md:h-[500px] w-3/4 ml-auto mr-0 flex items-center justify-end translate-x-8 md:translate-x-64">
+         <div className="relative h-[340px] md:h-[500px] w-full lg:w-3/4 lg:ml-auto mr-0 flex items-center justify-end lg:translate-x-64">
           {/* Abstract organic shapes */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-96 md:h-96 bg-secondary/30 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] animate-[spin_20s_linear_infinite] blur-xl"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 bg-primary/20 rounded-[60%_40%_30%_70%/50%_60%_40%_50%] animate-[spin_15s_linear_infinite_reverse] blur-lg"></div>
@@ -131,13 +137,14 @@ export default function HomePage() {
             bilingual curriculum blends structured learning with child-led play
             in a warm, organic environment. We focus on fostering confidence,
             empathy, and a lifelong love of learning—like a warm hug from a
-            trusted teacher.
+            trusted teacher. Learn more about our Ottawa location and
+            <a href="/hours" className="text-primary font-semibold hover:underline">hours of operation</a> on the pages below.
           </p>
         </div>
       </section>
 
       {/* Programs Section */}
-      <section className="py-20 px-4 bg-muted/30">
+      <section id="programs" className="py-20 px-4 bg-muted/30">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
@@ -149,7 +156,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex flex-wrap gap-6 justify-center">
             {programs.map((program, idx) => (
               <ProgramCard key={idx} {...program} />
             ))}

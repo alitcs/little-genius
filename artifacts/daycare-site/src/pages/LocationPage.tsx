@@ -1,9 +1,15 @@
 import { MapPin, Navigation, Bus, Car } from "lucide-react";
 import CTASection from "@/components/CTASection";
+import SEO from "@/components/SEO";
 
 export default function LocationPage() {
   return (
     <div className="w-full">
+      <SEO
+        title="Little Genius Island — Location in Ottawa"
+        description="Find Little Genius Island in Ottawa. Our daycare offers a safe Montessori-style bilingual environment for children under 6, with easy parking and nearby transit."
+        path="/location"
+      />
       {/* Header */}
       <section className="bg-primary/5 py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -25,11 +31,11 @@ export default function LocationPage() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-2">Address</h3>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <address className="text-lg text-muted-foreground leading-relaxed not-italic">
                   Little Genius Island<br />
                   123 Maple Grove Lane<br />
                   Ottawa, ON K1A 0A9
-                </p>
+                </address>
               </div>
             </div>
 
@@ -72,7 +78,7 @@ export default function LocationPage() {
           </div>
 
           {/* Map Side */}
-          <div className="h-[400px] lg:h-auto min-h-[500px] w-full rounded-[2rem] overflow-hidden border-4 border-primary/10 shadow-lg relative bg-muted/50 flex flex-col items-center justify-center">
+          <div className="h-[360px] md:h-[420px] lg:h-auto min-h-[360px] lg:min-h-[500px] w-full rounded-[2rem] overflow-hidden border-4 border-primary/10 shadow-lg relative bg-muted/50 flex flex-col items-center justify-center">
             {/* Map Placeholder */}
             <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CgkJPHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPgoJCTxwYXRoIGQ9Ik0wIDIwaDQwTTIwIDB2NDAiIHN0cm9rZT0iIzI1NjM0NCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjwvc3ZnPg==')]"></div>
             

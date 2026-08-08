@@ -1,8 +1,9 @@
 import { Clock, CalendarX, AlertCircle } from "lucide-react";
 import CTASection from "@/components/CTASection";
+import SEO from "@/components/SEO";
 
 export default function HoursPage() {
-  const schedule = [
+  const schedule: Array<{ day: string; hours: string; closed?: boolean; note?: string }> = [
     { day: "Monday", hours: "7:00 AM – 6:00 PM" },
     { day: "Tuesday", hours: "7:00 AM – 6:00 PM" },
     { day: "Wednesday", hours: "7:00 AM – 6:00 PM" },
@@ -14,6 +15,11 @@ export default function HoursPage() {
 
   return (
     <div className="w-full">
+      <SEO
+        title="Little Genius Island — Hours of Operation"
+        description="See the weekly hours for Little Genius Island daycare in Ottawa. Our bilingual Montessori program is open Monday to Friday with a safe schedule for working families."
+        path="/hours"
+      />
       {/* Header */}
       <section className="bg-primary/5 py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">

@@ -1,8 +1,14 @@
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import SEO from "@/components/SEO";
 
 export default function ContactPage() {
   return (
     <div className="w-full">
+      <SEO
+        title="Little Genius Island — Contact"
+        description="Contact Little Genius Island daycare in Ottawa to schedule a tour, ask about bilingual Montessori programs, or join our waitlist for children ages 11 months to 6 years."
+        path="/contact"
+      />
       {/* Header */}
       <section className="bg-primary/5 py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -50,7 +56,9 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-muted-foreground">Visit Us</p>
-                  <p className="text-lg font-bold text-foreground">123 Maple Grove Lane, Ottawa</p>
+                  <address className="text-lg font-bold text-foreground not-italic">
+                    123 Maple Grove Lane, Ottawa
+                  </address>
                 </div>
               </div>
             </div>

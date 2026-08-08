@@ -1,5 +1,6 @@
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
+import SEO from "@/components/SEO";
 
 export default function FAQPage() {
   const faqs = [
@@ -39,6 +40,11 @@ export default function FAQPage() {
 
   return (
     <div className="w-full">
+      <SEO
+        title="Little Genius Island — FAQ"
+        description="Find answers about Little Genius Island's bilingual daycare program, age groups, meals, waitlist, safety, and daily routines in Ottawa."
+        path="/faq"
+      />
       {/* Header */}
       <section className="bg-primary/5 py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
