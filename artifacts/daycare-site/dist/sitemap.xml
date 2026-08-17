@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace the URLs below with your actual published site domain before submitting this sitemap. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com/</loc>
+  </url>
+  <url>
+    <loc>https://example.com/location</loc>
+  </url>
+  <url>
+    <loc>https://example.com/hours</loc>
+  </url>
+  <url>
+    <loc>https://example.com/contact</loc>
+  </url>
+  <url>
+    <loc>https://example.com/faq</loc>
+  </url>
+  <url>
+    <loc>https://example.com/guide</loc>
+  </url>
+</urlset>
