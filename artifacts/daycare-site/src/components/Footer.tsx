@@ -53,7 +53,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-4 font-semibold text-muted-foreground">
               <li className="flex items-start gap-3">
                 <MapPin className="text-primary shrink-0 mt-0.5" size={20} />
-                <span>123 Maple Grove Lane<br/>Ottawa, ON K1A 0A9</span>
+                <span>78 Main St S, <br/>Newmarket, ON L3Y 3Y6</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="text-primary shrink-0" size={20} />
@@ -61,7 +61,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-primary shrink-0" size={20} />
-                <span>LePetitGenie26@gmail.com</span>
+                <span>sanazin14@gmail.com</span>
               </li>
             </ul>
           </div>

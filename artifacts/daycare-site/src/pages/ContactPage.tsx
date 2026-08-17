@@ -36,7 +36,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-muted-foreground">Call Us</p>
-                  <p className="text-xl font-bold text-foreground">(613) 555-0123</p>
+                  <p className="text-xl font-bold text-foreground">647 712 1144</p>
                 </div>
               </div>
 
@@ -46,7 +46,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-muted-foreground">Email Us</p>
-                  <p className="text-xl font-bold text-foreground">LePetitGenie26@gmail.com</p>
+                  <p className="text-xl font-bold text-foreground">sanazin14@gmail.com</p>
                 </div>
               </div>
 
@@ -57,7 +57,7 @@ export default function ContactPage() {
                 <div>
                   <p className="text-sm font-bold text-muted-foreground">Visit Us</p>
                   <address className="text-lg font-bold text-foreground not-italic">
-                    123 Maple Grove Lane, Ottawa
+                   78 Main St S, Newmarket,
                   </address>
                 </div>
               </div>

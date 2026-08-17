@@ -33,8 +33,8 @@ export default function LocationPage() {
                 <h3 className="text-2xl font-bold text-foreground mb-2">Address</h3>
                 <address className="text-lg text-muted-foreground leading-relaxed not-italic">
                   Little Genius Island<br />
-                  123 Maple Grove Lane<br />
-                  Ottawa, ON K1A 0A9
+                  78 Main St S<br />
+                  Newmarket, ON L3Y 3Y6
                 </address>
               </div>
             </div>
@@ -46,7 +46,7 @@ export default function LocationPage() {
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-2">Parking & Drop-off</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  We offer a dedicated 15-minute loading zone for safe and seamless morning drop-offs and afternoon pick-ups right at our front entrance.
+                 Convenient parking and a dedicated drop-off area make arrivals and pick-ups simple, safe, and stress-free for families.
                 </p>
               </div>
             </div>
@@ -58,7 +58,7 @@ export default function LocationPage() {
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-2">Transit</h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Located just a 3-minute walk from the Maple Grove transit station (Routes 45 & 88), making commuting easy for working parents.
+                  Conveniently accessible by public transit, making it easy for families and caregivers to get to and from daycare. 
                 </p>
               </div>
             </div>
