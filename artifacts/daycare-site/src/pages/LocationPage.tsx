@@ -78,13 +78,18 @@ export default function LocationPage() {
           </div>
 
           {/* Map Side */}
-          <div className="h-[360px] md:h-[420px] lg:h-auto min-h-[360px] lg:min-h-[500px] w-full rounded-[2rem] overflow-hidden border-4 border-primary/10 shadow-lg relative bg-muted/50 flex flex-col items-center justify-center">
-            {/* Map Placeholder */}
-            <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CgkJPHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPgoJCTxwYXRoIGQ9Ik0wIDIwaDQwTTIwIDB2NDAiIHN0cm9rZT0iIzI1NjM0NCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjwvc3ZnPg==')]"></div>
-            
-            <MapPin size={48} className="text-primary mb-4" />
-            <h3 className="text-xl font-bold text-foreground">Map Coming Soon</h3>
-            <p className="text-muted-foreground mt-2">Interactive map integration in progress</p>
+          <div className="h-[360px] md:h-[420px] lg:h-auto min-h-[360px] lg:min-h-[500px] w-full overflow-hidden rounded-[2rem] border-4 border-primary/10 bg-muted/50 shadow-lg">
+            <iframe
+              title="Little Genius Island location map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2867.301456200332!2d-79.4601127!3d44.0564834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ad20590c6888b%3A0xbd3d6be385806fe4!2s78%20Main%20St%20S%2C%20Newmarket%2C%20ON%20L3Y%203Y6!5e0!3m2!1sen!2sca!4v1787285406459!5m2!1sen!2sca"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              className="h-full w-full"
+            />
           </div>
         </div>
       </section>
