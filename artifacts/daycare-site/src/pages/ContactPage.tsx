@@ -21,7 +21,7 @@ const contactCards = [
   {
     icon: Mail,
     label: "Email us",
-    value: "sanazin14@gmail.com",
+    value: "info@littlegeniusisland.ca",
     accent: "bg-secondary/20 text-secondary-foreground",
   },
   {

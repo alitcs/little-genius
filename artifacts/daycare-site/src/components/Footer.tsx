@@ -61,7 +61,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-primary shrink-0" size={20} />
-                <span>sanazin14@gmail.com</span>
+                <span>info@littlegeniusisland.ca</span>
               </li>
             </ul>
           </div>

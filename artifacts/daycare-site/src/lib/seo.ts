@@ -3,7 +3,7 @@ export const siteDescription =
   "Little Genius Island is a bilingual Montessori-style daycare in Ottawa for children 11 months to 6 years, offering English and French early learning in a nurturing environment.";
 
 export const sitePhone = "+1-613-555-0123";
-export const siteEmail = "LePetitGenie26@gmail.com";
+export const siteEmail = "info@littlegeniusisland.ca";
 export const siteAddress = {
   streetAddress: "123 Maple Grove Lane",
   addressLocality: "Ottawa",
