@@ -82,7 +82,7 @@ export default function HomePage() {
               Where Little Minds <span className="text-primary">Bloom.</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
-              Welcome to Little Genius Island, a magical, bilingual safe haven
+              Welcome to Little Genius Island, a magical, bilingual childcare space
               where children learn, grow, and discover the world through play.
             </p>
           </div>

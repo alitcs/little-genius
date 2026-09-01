@@ -2,3 +2,8 @@
   base = "artifacts/daycare-site"
   command = "npm run build"
   publish = "dist"
+[[redirects]]
+  from = "https://littlegeniuss.netlify.app/*"
+  to = "https://littlegeniusisland.ca/:splat"
+  status = 301
+  force = true

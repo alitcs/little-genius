@@ -5,10 +5,10 @@ export const siteDescription =
 export const sitePhone = "905 977 1151";
 export const siteEmail = "info@littlegeniusisland.ca";
 export const siteAddress = {
-  streetAddress: "123 Maple Grove Lane",
-  addressLocality: "Ottawa",
+  streetAddress: "78 Main St S",
+  addressLocality: "Newmarket",
   addressRegion: "ON",
-  postalCode: "K1A 0A9",
+  postalCode: "L3Y 3Y6",
   addressCountry: "CA",
 };
 
