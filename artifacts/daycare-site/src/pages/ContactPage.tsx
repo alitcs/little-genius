@@ -15,7 +15,7 @@ const contactCards = [
   {
     icon: Phone,
     label: "Call us",
-    value: "647 712 1144",
+    value: "905 977 1151",
     accent: "bg-primary/10 text-primary",
   },
   {
