@@ -1,15 +1,11 @@
 import {
-  ArrowRight,
   CalendarCheck2,
-  Clock3,
-  Languages,
   Mail,
   MapPin,
   Phone,
-  Sparkles,
 } from "lucide-react";
-import { InlineWidget } from "react-calendly";
 import SEO from "@/components/SEO";
+import Cal from "@calcom/embed-react"
 
 const contactCards = [
   {
@@ -133,14 +129,11 @@ export default function ContactPage() {
 
                 <div className="bg-gradient-to-br from-primary/[0.03] via-background to-secondary/[0.04] p-3 sm:p-4">
                   <div className="overflow-hidden rounded-[1.5rem] border border-border bg-card">
-                    <InlineWidget
-                      url="https://calendly.com/lepetitgenie26/30min"
-                      styles={{
-                        height: "880px",
-                        width: "100%",
-                        overflow: "hidden",
-                      }}
-                    />
+                        <Cal
+      calLink="https://cal.com/little-genius-island-eyzs6m/30min"
+      style={{ width: "100%", height: "100%", overflow: "scroll" }}
+      config={{ layout: "month_view", theme: "light" }}
+    />
                   </div>
                 </div>
               </div>

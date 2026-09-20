@@ -2,21 +2,21 @@
 <!-- Replace the URLs below with your actual published site domain before submitting this sitemap. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://example.com/</loc>
+    <loc>https://littlegeniusisland.ca/</loc>
   </url>
   <url>
-    <loc>https://example.com/location</loc>
+    <loc>https://littlegeniusisland.ca/location</loc>
   </url>
   <url>
-    <loc>https://example.com/hours</loc>
+    <loc>https://littlegeniusisland.ca/hours</loc>
   </url>
   <url>
-    <loc>https://example.com/contact</loc>
+    <loc>https://littlegeniusisland.ca/contact</loc>
   </url>
   <url>
-    <loc>https://example.com/faq</loc>
+    <loc>https://littlegeniusisland.ca/faq</loc>
   </url>
   <url>
-    <loc>https://example.com/guide</loc>
+    <loc>https://littlegeniusisland.ca/guide</loc>
   </url>
 </urlset>
