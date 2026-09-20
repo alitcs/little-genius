@@ -10,6 +10,7 @@ import HoursPage from "./pages/HoursPage";
 import ContactPage from "./pages/ContactPage";
 import FAQPage from "./pages/FAQPage";
 import ParentalGuidePage from "./pages/ParentalGuidePage";
+import OurTeamPage from "./pages/OurTeamPage";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -28,6 +29,7 @@ function Router() {
           <Route path="/contact" component={ContactPage} />
           <Route path="/faq" component={FAQPage} />
           <Route path="/guide" component={ParentalGuidePage} />
+          <Route path="/team" component={OurTeamPage} />
           <Route component={NotFound} />
         </Switch>
       </main>
