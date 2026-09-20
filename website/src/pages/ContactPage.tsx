@@ -117,7 +117,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-xs font-black uppercase tracking-[0.18em] text-muted-foreground">
-                        Schedule a call
+                        Schedule a tour
                       </p>
                       <p className="text-lg font-black text-foreground">Let’s get started</p>
                     </div>
