@@ -1,5 +1,4 @@
 import { MapPin, Navigation, Bus, Car } from "lucide-react";
-import CTASection from "@/components/CTASection";
 import SEO from "@/components/SEO";
 
 export default function LocationPage() {
@@ -65,7 +64,7 @@ export default function LocationPage() {
 
             <div>
               <a 
-                href="https://maps.google.com" 
+                href="https://www.google.com/maps/place/78+Main+St+S,+Newmarket,+ON+L3Y+3Y6" 
                 target="_blank" 
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold px-6 py-3 rounded-full hover:bg-primary/90 transition-colors"
@@ -93,8 +92,6 @@ export default function LocationPage() {
           </div>
         </div>
       </section>
-
-      <CTASection />
     </div>
   );
 }

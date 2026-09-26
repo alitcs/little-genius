@@ -1,5 +1,4 @@
 import { BookOpen, Heart, Music, Palette, Star, Sun } from "lucide-react";
-import CTASection from "@/components/CTASection";
 import ProgramCard from "@/components/ProgramCard";
 import SEO from "@/components/SEO";
 import daycareVid from "@/assets/daycare-vid.mp4";
@@ -91,37 +90,8 @@ export default function HomePage() {
               href="/contact"
               className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 rounded-full font-bold text-lg text-center transition-colors shadow-lg shadow-primary/20"
             >
-              Schedule a Tour
+              Book a Tour
             </a>
-            <a
-              href="#programs"
-              className="bg-white text-primary border border-primary/20 hover:bg-white/90 px-8 py-4 rounded-full font-bold text-lg text-center transition-colors"
-            >
-              Explore Programs
-            </a>
-          </div>
-        </div>
-
-           {/* Hero Visual / Shapes */}
-         <div className="relative h-[340px] md:h-[500px] w-full lg:w-3/4 lg:ml-auto mr-0 flex items-center justify-end lg:translate-x-64">
-          {/* Abstract organic shapes */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 md:w-96 md:h-96 bg-secondary/30 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] animate-[spin_20s_linear_infinite] blur-xl"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 bg-primary/20 rounded-[60%_40%_30%_70%/50%_60%_40%_50%] animate-[spin_15s_linear_infinite_reverse] blur-lg"></div>
-
-          <div className="relative z-10 w-full h-full flex items-center justify-center">
-            <div className="w-64 h-64 md:w-80 md:h-80 bg-white rounded-full shadow-2xl p-8 flex flex-col items-center justify-center text-center gap-4 relative border-[8px] border-white ring-4 ring-primary/10">
-              <Heart className="w-16 h-16 text-accent" fill="currentColor" />
-              <h3 className="font-serif text-2xl font-bold text-primary">
-                Le petit génie
-              </h3>
-              <p className="text-sm font-bold text-muted-foreground">
-                Nurturing curiosity every day
-              </p>
-
-              {/* Decorative mini shapes */}
-              <div className="absolute -top-4 -right-4 w-12 h-12 bg-secondary rounded-full border-4 border-[#EDF5E1]"></div>
-              <div className="absolute -bottom-2 -left-2 w-16 h-16 bg-primary rounded-2xl rotate-12 border-4 border-[#EDF5E1]"></div>
-            </div>
           </div>
         </div>
       </section>
@@ -212,8 +182,6 @@ export default function HomePage() {
         </div>
       </section>
       */}
-
-      <CTASection />
     </div>
   );
 }

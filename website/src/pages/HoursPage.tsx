@@ -1,5 +1,4 @@
 import { Clock, CalendarX, AlertCircle } from "lucide-react";
-import CTASection from "@/components/CTASection";
 import SEO from "@/components/SEO";
 
 export default function HoursPage() {
@@ -94,8 +93,6 @@ export default function HoursPage() {
 
         </div>
       </section>
-
-      <CTASection />
     </div>
   );
 }
