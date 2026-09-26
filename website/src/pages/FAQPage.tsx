@@ -1,5 +1,4 @@
 import FAQAccordion from "@/components/FAQAccordion";
-import CTASection from "@/components/CTASection";
 import SEO from "@/components/SEO";
 
 export default function FAQPage() {
@@ -70,8 +69,6 @@ export default function FAQPage() {
           </div>
         </div>
       </section>
-
-      <CTASection />
     </div>
   );
 }
