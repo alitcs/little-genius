@@ -23,7 +23,7 @@ export default function Footer() {
               <a href="https://www.facebook.com/share/1BF6qM1poT/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="https://www.instagram.com/lepetitgenie26?igsh=MWd5bTVxYW1zbHk5dw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+              <a href="https://www.instagram.com/little_genius_island/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                 <Instagram size={20} />
               </a>  
             </div>
