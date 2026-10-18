@@ -12,11 +12,11 @@ export default function CTASection() {
             Schedule a tour to see our magical spaces in person and meet our dedicated educators.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
-            <Link href="/contact" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors font-bold px-8 py-4 rounded-full text-lg shadow-sm">
+            <Link href="/book-tour" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 transition-colors font-bold px-8 py-4 rounded-full text-lg shadow-sm">
               Book a Tour
             </Link>
-            <Link href="/contact" className="bg-white/10 hover:bg-white/20 transition-colors font-bold px-8 py-4 rounded-full text-lg border border-white/20">
-              Join Our Waitlist
+            <Link href="/signup/daycare" className="bg-white/10 hover:bg-white/20 transition-colors font-bold px-8 py-4 rounded-full text-lg border border-white/20">
+              Daycare sign-up
             </Link>
           </div>
         </div>

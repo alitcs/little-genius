@@ -2,109 +2,100 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import logoTransparent from "@assets/joe.png";
-import locationIcon from "@assets/icons/map.png";
-import hoursIcon from "@assets/icons/clock.png";
-import guideIcon from "@assets/icons/parental-guide.png";
-import teamIcon from "@assets/icons/team.png";
-import locationIconHover from "@assets/icons/map-hover.png";
-import hoursIconHover from "@assets/icons/clock-hover.png";
-import guideIconHover from "@assets/icons/parental-guide-hover.png";
-import teamIconHover from "@assets/icons/team-hover.png";
+
+const navLinks = [
+  { name: "Services", href: "/services" },
+  { name: "Our team", href: "/team" },
+  { name: "Hours", href: "/hours" },
+  { name: "Location", href: "/location" },
+];
 
 export default function Navbar() {
   const [location] = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navLinks = [
-    {
-      name: "Home",
-      href: "/"
-    },
-    {
-      name: "Location",
-      href: "/location",
-    },
-    {
-      name: "Hours",
-      href: "/hours",
-    },
-    {
-      name: "FAQ",
-      href: "/faq",
-    },
-    {
-      name: "Team",
-      href: "/team",
-    },
-  ];
-
   const isActive = (path: string) => location === path;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 shadow-sm backdrop-blur-md">
-      <div className="mx-auto flex h-32 max-w-7xl items-center justify-between px-4">
-        <Link href="/" className="group flex items-center gap-3">
+    <header className="sticky top-0 z-50 w-full border-b border-[#e8ece5] bg-white/95 backdrop-blur">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <Link href="/" className="flex items-center" aria-label="Little Genius Island home">
           <img
             src={logoTransparent}
-            alt="Little Genius Island Logo"
-            className="h-22 w-auto object-contain transition-transform group-hover:scale-105"
+            alt="Little Genius Island"
+            className="h-14 w-auto object-contain"
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
+        <nav aria-label="Main navigation" className="hidden items-center gap-5 xl:flex">
+          {navLinks.map(({ name, href }) => (
             <Link
-              key={link.name}
-              href={link.href}
-              className="group flex items-center gap-2 text-base font-bold text-black transition-colors hover:text-[#495A1C] focus-visible:text-[#495A1C]"
+              key={name}
+              href={href}
+              aria-current={isActive(href) ? "page" : undefined}
+              className={`group relative py-2 text-sm font-semibold transition-colors duration-200 hover:text-[#345b37] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#345b37] ${
+                isActive(href) ? "text-[#345b37]" : "text-[#58645a]"
+              }`}
             >
-              {link.name}
+              {name}
+              <span
+                className={`absolute inset-x-0 -bottom-px h-px origin-left bg-[#d09a36] transition-transform duration-200 ${
+                  isActive(href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                }`}
+                aria-hidden="true"
+              />
             </Link>
           ))}
-
           <Link
-            href="/contact"
-            className="rounded-full bg-primary px-6 py-2.5 font-bold text-primary-foreground transition-colors hover:bg-primary/90"
+            href="/book-tour"
+            className="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#345b37] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#29492c] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#345b37]"
           >
-            Book a Tour
+            Book a tour
           </Link>
         </nav>
 
         <button
-          className="p-2 text-foreground md:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
+          type="button"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-[#35483a] transition-colors hover:bg-[#f1f4ef] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#345b37] xl:hidden"
+          onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-navigation"
         >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {isMobileMenuOpen && (
-        <div className="absolute left-0 top-20 flex w-full flex-col gap-4 border-b border-border bg-background px-4 py-4 shadow-lg md:hidden">
-          {navLinks.map((link) => (
+        <nav
+          id="mobile-navigation"
+          aria-label="Mobile navigation"
+          className="mobile-menu-enter border-t border-[#e8ece5] bg-white px-4 py-4 shadow-lg xl:hidden"
+        >
+          <div className="mx-auto flex max-w-7xl flex-col gap-1">
+            {navLinks.map(({ name, href }) => (
+              <Link
+                key={name}
+                href={href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`rounded-lg border-l-2 px-3 py-3 text-base font-semibold transition-all duration-200 hover:translate-x-1 hover:bg-[#f3f6f1] hover:text-[#345b37] ${
+                  isActive(href)
+                    ? "border-[#d09a36] bg-[#f3f6f1] text-[#345b37]"
+                    : "border-transparent text-[#58645a]"
+                }`}
+              >
+                {name}
+              </Link>
+            ))}
             <Link
-              key={link.name}
-              href={link.href}
+              href="/book-tour"
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`group flex items-center gap-3 rounded-xl px-4 py-3 text-lg font-bold text-black transition-colors hover:text-[#495A1C] focus-visible:text-[#495A1C] ${
-                isActive(link.href) ? "bg-primary/10" : ""
-              }`}
+              className="mt-2 inline-flex min-h-11 items-center justify-center rounded-lg bg-[#345b37] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#29492c]"
             >
-              {link.name}
-            </Link>
-          ))}
-
-          <div className="px-4 pt-2">
-            <Link
-              href="/contact"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block w-full rounded-xl bg-primary px-6 py-3 text-center font-bold text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              Book a Tour
+              Book a tour
             </Link>
           </div>
-        </div>
+        </nav>
       )}
     </header>
   );

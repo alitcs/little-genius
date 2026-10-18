@@ -41,7 +41,7 @@ export default function FAQPage() {
     <div className="w-full">
       <SEO
         title="Little Genius Island — FAQ"
-        description="Find answers about Little Genius Island's bilingual daycare program, age groups, meals, waitlist, safety, and daily routines in Ottawa."
+        description="Find answers about Little Genius Island's bilingual daycare program, age groups, meals, waitlist, safety, and daily routines in Newmarket."
         path="/faq"
       />
       {/* Header */}
@@ -63,8 +63,8 @@ export default function FAQPage() {
             <p className="text-muted-foreground mb-4">
               We're here to help! Contact our administrative team for more information.
             </p>
-            <a href="/contact" className="inline-block bg-white text-primary border border-border shadow-sm font-bold px-6 py-3 rounded-full hover:bg-muted/50 transition-colors">
-              Contact Us
+            <a href="mailto:info@littlegeniusisland.ca" className="inline-block bg-white text-primary border border-border shadow-sm font-bold px-6 py-3 rounded-full hover:bg-muted/50 transition-colors">
+              Email Us
             </a>
           </div>
         </div>

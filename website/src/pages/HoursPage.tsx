@@ -1,96 +1,76 @@
-import { Clock, CalendarX, AlertCircle } from "lucide-react";
+import { ArrowRight, CalendarX, Clock } from "lucide-react";
+import { Link } from "wouter";
 import SEO from "@/components/SEO";
 
-export default function HoursPage() {
-  const schedule: Array<{ day: string; hours: string; closed?: boolean; note?: string }> = [
-    { day: "Monday", hours: "7:00 AM – 6:00 PM" },
-    { day: "Tuesday", hours: "7:00 AM – 6:00 PM" },
-    { day: "Wednesday", hours: "7:00 AM – 6:00 PM" },
-    { day: "Thursday", hours: "7:00 AM – 6:00 PM" },
-    { day: "Friday", hours: "7:00 AM – 6:00 PM" },
-    { day: "Saturday", hours: "Closed", closed: true },
-    { day: "Sunday", hours: "Closed", closed: true },
-  ];
+const schedule = [
+  { day: "Monday–Friday", hours: "7:00 AM–6:00 PM" },
+  { day: "Saturday–Sunday", hours: "Closed", closed: true },
+];
 
+export default function HoursPage() {
   return (
-    <div className="w-full">
+    <div className="page-enter bg-[#f7f8f4]">
       <SEO
-        title="Little Genius Island — Hours of Operation"
-        description="See the weekly hours for Little Genius Island daycare in Ottawa. Our bilingual Montessori program is open Monday to Friday with a safe schedule for working families."
+        title="Hours of Operation"
+        description="See the weekly hours for Little Genius Island daycare in Newmarket. Open Monday to Friday, 7:00 AM to 6:00 PM."
         path="/hours"
       />
-      {/* Header */}
-      <section className="bg-primary/5 py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-black text-foreground mb-4">Hours of Operation</h1>
-          <p className="text-lg md:text-xl text-muted-foreground">
-            Flexible schedules designed to support busy, working parents.
-          </p>
-        </div>
-      </section>
+      <section className="px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <header className="mb-9 max-w-2xl">
+            <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#557455]">
+              Plan your day
+            </p>
+            <div className="mt-4 h-px w-16 bg-[#d09a36]" aria-hidden="true" />
+            <h1 className="mt-5 text-3xl font-bold tracking-tight text-[#1e2b22] sm:text-4xl">
+              Hours of operation
+            </h1>
+            <p className="mt-3 text-lg leading-7 text-[#68736a]">
+              A consistent weekday schedule for your family.
+            </p>
+          </header>
 
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          
-          <div className="bg-card border border-border shadow-sm rounded-[2rem] overflow-hidden mb-12">
-            <div className="bg-primary p-6 md:p-8 flex items-center gap-4 text-primary-foreground">
-              <Clock size={32} />
-              <h2 className="text-2xl md:text-3xl font-bold">Weekly Schedule</h2>
+          <div className="overflow-hidden rounded-xl border border-[#dfe6dc] bg-white">
+            <div className="flex items-center gap-3 border-b border-[#e7ebe4] px-5 py-4 sm:px-7">
+              <Clock size={20} className="text-[#345b37]" aria-hidden="true" />
+              <h2 className="font-bold text-[#26352a]">Weekly schedule</h2>
             </div>
-            
-            <div className="p-6 md:p-8">
-              <div className="flex flex-col divide-y divide-border">
-                {schedule.map((item, idx) => (
-                  <div key={idx} className={`py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 ${item.closed ? 'opacity-60' : ''}`}>
-                    <span className="text-xl font-bold text-foreground w-32">{item.day}</span>
-                    <div className="flex-1 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
-                      <span className={`text-lg font-semibold ${item.closed ? 'text-destructive' : 'text-primary'}`}>
-                        {item.hours}
-                      </span>
-                      {item.note && (
-                        <span className="text-sm font-bold bg-muted px-3 py-1 rounded-full text-muted-foreground w-fit">
-                          {item.note}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                ))}
+            <dl className="divide-y divide-[#e7ebe4] px-5 sm:px-7">
+              {schedule.map(({ day, hours, closed }) => (
+                <div
+                  key={day}
+                  className="flex flex-col gap-1 py-5 transition-colors hover:bg-[#fbfcfa] sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+                >
+                  <dt className="font-semibold text-[#35483a]">{day}</dt>
+                  <dd className={closed ? "text-[#7a847b]" : "font-bold text-[#345b37]"}>
+                    {hours}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <div className="mt-5">
+            <article className="rounded-xl border border-[#e2e8df] bg-white p-5 sm:p-6">
+              <div className="flex items-center gap-3">
+                <CalendarX size={19} className="text-[#a97925]" aria-hidden="true" />
+                <h2 className="font-bold text-[#26352a]">Holiday closures</h2>
               </div>
-            </div>
+              <p className="mt-3 text-sm leading-6 text-[#68736a]">
+                We close on statutory holidays. These include New Year’s Day,
+                Family Day, Good Friday, Victoria Day, Canada Day, Labour Day,
+                Thanksgiving, Christmas Day, and Boxing Day.
+              </p>
+            </article>
           </div>
 
-          {/* Holiday closures */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#EDF5E1] p-8 rounded-[2rem] flex flex-col gap-4">
-              <CalendarX size={32} className="text-primary" />
-              <h3 className="text-2xl font-bold text-foreground">Holiday Closures</h3>
-              <p className="text-muted-foreground font-medium leading-relaxed mb-2">
-                We are closed on all statutory holidays to allow our dedicated staff to spend time with their families.
-              </p>
-              <ul className="list-disc pl-5 text-foreground font-semibold space-y-1">
-                <li>New Year's Day</li>
-                <li>Family Day</li>
-                <li>Good Friday</li>
-                <li>Victoria Day</li>
-                <li>Canada Day</li>
-                <li>Labour Day</li>
-                <li>Thanksgiving Day</li>
-                <li>Christmas Day & Boxing Day</li>
-              </ul>
-            </div>
-
-            <div className="bg-amber-50 p-8 rounded-[2rem] flex flex-col gap-4">
-              <AlertCircle size={32} className="text-accent" />
-              <h3 className="text-2xl font-bold text-foreground">Late Pick-up Policy</h3>
-              <p className="text-muted-foreground font-medium leading-relaxed">
-                We understand that delays happen. However, to respect our educators' schedules, a late fee of <strong className="text-foreground">$1 per minute</strong> is applied after closing time.
-              </p>
-              <p className="text-muted-foreground font-medium leading-relaxed">
-                Please notify us immediately if you anticipate being late so we can reassure your child and make necessary arrangements.
-              </p>
-            </div>
-          </div>
-
+          <Link
+            href="/book-tour"
+            className="group mt-8 inline-flex min-h-11 items-center gap-2 font-semibold text-[#345b37] hover:text-[#243f27]"
+          >
+            Come see us in person
+            <ArrowRight size={17} aria-hidden="true" className="transition-transform group-hover:translate-x-1" />
+          </Link>
         </div>
       </section>
     </div>

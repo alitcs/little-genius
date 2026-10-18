@@ -2,73 +2,93 @@ import { Link } from "wouter";
 import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import logoTransparent from "@assets/joe.png";
 
+const footerLinkClass =
+  "transition-colors hover:text-[#345b37] focus-visible:text-[#345b37]";
+
 export default function Footer() {
   return (
-    <footer className="bg-card border-t border-border mt-auto">
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          
-          <div className="col-span-1 md:col-span-1 flex flex-col items-start gap-4">
-            <Link href="/" className="flex items-center gap-3">
-              <img 
-                src={logoTransparent} 
-                alt="Little Genius Island Logo" 
-                className="h-16 w-auto object-contain"
+    <footer className="mt-auto border-t border-[#e8ece5] bg-white">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr_1fr]">
+          <div className="flex flex-col items-start gap-4">
+            <Link href="/" aria-label="Little Genius Island home">
+              <img
+                src={logoTransparent}
+                alt="Little Genius Island"
+                className="h-14 w-auto object-contain"
               />
             </Link>
-            <p className="text-muted-foreground mt-2 font-medium">
-              Where Little Minds Bloom. A warm, nurturing bilingual daycare for curious young children.
+            <p className="max-w-sm text-sm leading-6 text-[#68736a]">
+              Thoughtful learning and care for little learners, from daycare to
+              tutoring and music.
             </p>
-            <div className="flex gap-4 mt-2">
-              <a href="https://www.facebook.com/share/1BF6qM1poT/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
-                <Facebook size={20} />
+            <div className="flex gap-3">
+              <a
+                href="https://www.facebook.com/share/1BF6qM1poT/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Little Genius Island on Facebook"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f1f4ef] text-[#456345] transition-colors hover:bg-[#e3eadf]"
+              >
+                <Facebook size={18} />
               </a>
-              <a href="https://www.instagram.com/little_genius_island/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
-                <Instagram size={20} />
-              </a>  
+              <a
+                href="https://www.instagram.com/little_genius_island/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Little Genius Island on Instagram"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f1f4ef] text-[#456345] transition-colors hover:bg-[#e3eadf]"
+              >
+                <Instagram size={18} />
+              </a>
             </div>
           </div>
 
           <div>
-            <h3 className="font-serif text-lg font-bold mb-4 text-foreground">Quick Links</h3>
-            <ul className="flex flex-col gap-3 font-semibold text-muted-foreground">
-              <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
-              <li><Link href="/location" className="hover:text-primary transition-colors">Location</Link></li>
-              <li><Link href="/hours" className="hover:text-primary transition-colors">Hours</Link></li>
-              <li><Link href="/faq" className="hover:text-primary transition-colors">FAQ</Link></li>
-              <li><Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
+            <h2 className="text-sm font-bold text-[#26352a]">Explore</h2>
+            <ul className="mt-4 flex flex-col gap-3 text-sm text-[#68736a]">
+              <li><Link href="/" className={footerLinkClass}>Home</Link></li>
+              <li><Link href="/services" className={footerLinkClass}>Services</Link></li>
+              <li><Link href="/daycare" className={footerLinkClass}>Montessori daycare</Link></li>
+              <li><Link href="/team" className={footerLinkClass}>Our team</Link></li>
+              <li><Link href="/hours" className={footerLinkClass}>Hours</Link></li>
+              <li><Link href="/location" className={footerLinkClass}>Location</Link></li>
+              <li><Link href="/faq" className={footerLinkClass}>FAQs</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-serif text-lg font-bold mb-4 text-foreground">Programs</h3>
-            <ul className="flex flex-col gap-3 font-semibold text-muted-foreground">
-              <li>Toddler (1.5yr - 2.5yr)</li>
-              <li>Preschool (2.5yr - 4yr)</li>
+            <h2 className="text-sm font-bold text-[#26352a]">Our services</h2>
+            <ul className="mt-4 flex flex-col gap-3 text-sm text-[#68736a]">
+              <li><Link href="/daycare" className={footerLinkClass}>Montessori daycare</Link></li>
+              <li><Link href="/private-tutoring" className={footerLinkClass}>Private tutoring</Link></li>
+              <li><Link href="/piano-lessons" className={footerLinkClass}>Piano lessons</Link></li>
+              <li><Link href="/book-tour" className={footerLinkClass}>Book a tour</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-serif text-lg font-bold mb-4 text-foreground">Contact</h3>
-            <ul className="flex flex-col gap-4 font-semibold text-muted-foreground">
+            <h2 className="text-sm font-bold text-[#26352a]">Get in touch</h2>
+            <ul className="mt-4 flex flex-col gap-4 text-sm text-[#68736a]">
               <li className="flex items-start gap-3">
-                <MapPin className="text-primary shrink-0 mt-0.5" size={20} />
-                <span>78 Main St S, <br/>Newmarket, ON L3Y 3Y6</span>
+                <MapPin className="mt-0.5 shrink-0 text-[#557455]" size={17} />
+                <span>78 Main St S,<br />Newmarket, ON L3Y 3Y6</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="text-primary shrink-0" size={20} />
-                <span>905 977 1151</span>
+                <Phone className="shrink-0 text-[#557455]" size={17} />
+                <a href="tel:+19059771151" className={footerLinkClass}>905 977 1151</a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="text-primary shrink-0" size={20} />
-                <span>info@littlegeniusisland.ca</span>
+                <Mail className="shrink-0 text-[#557455]" size={17} />
+                <a href="mailto:info@littlegeniusisland.ca" className={footerLinkClass}>
+                  Email us
+                </a>
               </li>
             </ul>
           </div>
-
         </div>
-        
-        <div className="border-t border-border mt-12 pt-8 text-center text-muted-foreground text-sm font-medium">
+
+        <div className="mt-10 border-t border-[#e8ece5] pt-6 text-sm text-[#7a847b]">
           <p>&copy; {new Date().getFullYear()} Little Genius Island. All rights reserved.</p>
         </div>
       </div>

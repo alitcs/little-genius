@@ -1,187 +1,78 @@
-import { BookOpen, Heart, Music, Palette, Star, Sun } from "lucide-react";
-import ProgramCard from "@/components/ProgramCard";
+import { ArrowRight, CalendarDays, Sprout } from "lucide-react";
+import { Link } from "wouter";
 import SEO from "@/components/SEO";
-import daycareVid from "@/assets/daycare-vid.mp4";
+import daycareVideo from "@/assets/daycare-vid.mp4";
 
 export default function HomePage() {
-  const programs = [
-    {
-      title: "Toddler Exploration",
-      ageGroup: "18 Months (1.5 years) – 30 months (2.5 years)",
-      description:
-        "A safe, sensory-rich environment where toddlers develop motor skills, early language, and social bonds through guided play.",
-      icon: Sun,
-      color: "bg-secondary/20 text-secondary-foreground",
-    },
-    {
-      title: "Preschool Discovery",
-      ageGroup: "30 months (2.5 years) – 6 Years",
-      description:
-        "Fostering independence and curiosity with structured activities in arts, bilingual communication, and basic problem-solving.",
-      icon: Palette,
-      color: "bg-accent/20 text-accent",
-    },
-    /*{
-      title: "Pre-K Readiness",
-      ageGroup: "4 – 5 Years",
-      description: "Preparing little minds for school with foundational literacy, numeracy, and cooperative projects in English and French.",
-      icon: BookOpen,
-      color: "bg-primary/10 text-primary"
-    },
-    {
-      title: "After-School Care",
-      ageGroup: "5 - 6 Years",
-      description: "A relaxing yet engaging space for older children to unwind, complete homework, and enjoy creative group activities.",
-      icon: Music,
-      color: "bg-orange-500/10 text-orange-500"
-  }*/
-  ];
-
-  const testimonials = [
-    {
-      text: "The educators are so warm and attentive. My daughter runs to the door every morning! It truly feels like a second family.",
-      author: "Sarah M.",
-      role: "Parent of a 3-year-old",
-    },
-    {
-      text: "We love the bilingual approach. Our son is picking up French naturally through play, and his confidence has blossomed.",
-      author: "David L.",
-      role: "Parent of a 4-year-old",
-    },
-  ];
-
   return (
-    <div className="w-full">
+    <section className="page-enter flex items-center bg-[#f7f8f4] px-4 py-10 sm:px-6 sm:py-14 lg:min-h-[min(76vh,48rem)] lg:px-8 lg:py-16">
       <SEO
         title="Little Genius Island"
-        description="Little Genius Island offers bilingual Montessori-style childcare in Ottawa for children 11 months to 6 years, with English and French early learning in a nurturing environment."
+        description="Choose a service at Little Genius Island or book a Montessori daycare tour in Newmarket."
         path="/"
       />
-      {/* Hero Section */}
-      <section className="relative pt-10 pb-20 md:pt-20 md:pb-32 px-4 overflow-visible bg-[#EDF5E1] flex flex-col lg:flex-row items-center gap-10">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-hidden
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src={daycareVid} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-
-        <div className="max-w-7xl mx-auto relative z-10 flex flex-col gap-12 items-center bg-white rounded-4xl p-8 md:translate-x-8">
-          <div className="flex flex-col items-start gap-6 max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-primary/20 px-4 py-2 rounded-full text-primary font-bold text-sm">
-              <Star size={16} className="text-secondary" fill="currentColor" />
-              <span>Bilingual Montessori Style Daycare</span>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-black text-foreground leading-[1.1]">
-              Where Little Minds <span className="text-primary">Bloom.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
-              Welcome to Little Genius Island, a magical, bilingual childcare space
-              where children learn, grow, and discover the world through play.
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
-            <a
-              href="/contact"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-4 rounded-full font-bold text-lg text-center transition-colors shadow-lg shadow-primary/20"
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div className="page-enter-child py-4 sm:py-8 lg:py-10">
+          <p className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.16em] text-[#456345]">
+            <Sprout size={17} aria-hidden="true" />
+            Little Genius Island
+          </p>
+          <div className="mt-5 h-px w-16 bg-[#d09a36]" aria-hidden="true" />
+          <h1 className="mt-6 max-w-xl text-4xl font-bold leading-[1.12] tracking-tight text-[#1e2b22] sm:text-5xl lg:text-6xl">
+            A thoughtful place to grow.
+          </h1>
+          <p className="mt-5 max-w-lg text-lg leading-8 text-[#68736a]">
+            Find the right learning experience for your child, or come see our
+            daycare in person.
+          </p>
+          <div className="mt-8 flex max-w-md flex-col gap-3">
+            <Link
+              href="/services"
+              className="group inline-flex min-h-14 items-center justify-between gap-3 rounded-lg bg-[#345b37] px-5 py-4 font-semibold text-white transition-colors hover:bg-[#29492c] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#345b37]"
             >
-              Book a Tour
-            </a>
+              Explore our services
+              <ArrowRight size={18} aria-hidden="true" className="transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href="/book-tour"
+              className="inline-flex min-h-14 items-center justify-between gap-3 rounded-lg border border-[#cdd8c9] bg-white px-5 py-4 font-semibold text-[#2f4a33] transition-colors hover:border-[#345b37] hover:bg-[#f0f4ed] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#345b37]"
+            >
+              <span className="inline-flex items-center gap-3">
+                <CalendarDays size={18} aria-hidden="true" />
+                Book a daycare tour
+              </span>
+              <ArrowRight size={18} aria-hidden="true" />
+            </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Philosophy Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center flex flex-col gap-6">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground">
-            Our Philosophy
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            At Little Genius Island, we believe every child is born curious. Our
-            bilingual curriculum blends structured learning with child-led play
-            in a warm, organic environment. We focus on fostering confidence,
-            empathy, and a lifelong love of learning—like a warm hug from a
-            trusted teacher. Learn more about our Ottawa location and
-            <a href="/hours" className="text-primary font-semibold hover:underline">hours of operation</a> on the pages below.
+          <p className="mt-5 flex items-center gap-2 text-sm text-[#778178]">
+            <span className="h-px w-6 bg-[#d09a36]" aria-hidden="true" />
+            Montessori-inspired · Bilingual · Child-centered
           </p>
         </div>
-      </section>
 
-      {/* Programs Section */}
-      <section id="programs" className="py-20 px-4 bg-muted/30">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-              Our Programs
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Tailored experiences designed to support your child's
-              developmental milestones at every stage.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-6 justify-center">
-            {programs.map((program, idx) => (
-              <ProgramCard key={idx} {...program} />
-            ))}
-          </div>
-        </div>
-      </section>
-      {/*
-      <section className="py-24 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
-          
-          <div className="lg:col-span-1 flex flex-col justify-center gap-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-              Loved by Parents
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Don't just take our word for it. Hear from the families who trust
-              us with their little ones every day.
-            </p>
-            <div className="flex gap-2">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star
-                  key={i}
-                  className="w-6 h-6 text-secondary"
-                  fill="currentColor"
-                />
-              ))}
+        <div className="relative">
+          <div className="absolute -right-2 -top-2 h-16 w-16 border-r border-t border-[#d09a36] sm:-right-3 sm:-top-3 sm:h-24 sm:w-24" aria-hidden="true" />
+          <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-[#dce6d7] shadow-[0_24px_60px_-32px_rgba(32,57,36,0.38)]">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              aria-label="A look inside the Little Genius Island daycare"
+              className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.025]"
+            >
+              <source src={daycareVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-4 border-t border-white/30 bg-[#243b2b]/90 px-4 py-3 text-white backdrop-blur-sm sm:px-5">
+              <span className="text-sm font-semibold">A little glimpse of our day</span>
+              <span className="h-px flex-1 bg-white/40" aria-hidden="true" />
+              <span className="text-xs font-medium tracking-wide text-white/80">NEWMARKET, ON</span>
             </div>
           </div>
-
-          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {testimonials.map((test, idx) => (
-              <div
-                key={idx}
-                className="bg-card p-8 rounded-[2rem] shadow-sm border border-border"
-              >
-                <p className="text-lg text-foreground italic mb-6">
-                  "{test.text}"
-                </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center font-bold text-primary text-xl">
-                    {test.author[0]}
-                  </div>
-                  <div>
-                    <p className="font-bold text-foreground">{test.author}</p>
-                    <p className="text-sm font-semibold text-muted-foreground">
-                      {test.role}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <div className="absolute -bottom-2 -left-2 h-12 w-12 border-b border-l border-[#345b37] sm:-bottom-3 sm:-left-3 sm:h-20 sm:w-20" aria-hidden="true" />
         </div>
-      </section>
-      */}
-    </div>
+      </div>
+    </section>
   );
 }

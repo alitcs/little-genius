@@ -1,4 +1,4 @@
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Switch, Route, Redirect, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,6 +11,10 @@ import ContactPage from "./pages/ContactPage";
 import FAQPage from "./pages/FAQPage";
 import ParentalGuidePage from "./pages/ParentalGuidePage";
 import OurTeamPage from "./pages/OurTeamPage";
+import SignupPage from "./pages/SignupPage";
+import ServicesPage from "./pages/ServicesPage";
+import DaycarePage from "./pages/DaycarePage";
+import PlannedServicePage from "./pages/PlannedServicePage";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -24,12 +28,35 @@ function Router() {
       <main className="flex-1">
         <Switch>
           <Route path="/" component={HomePage} />
+          <Route path="/services" component={ServicesPage} />
+          <Route path="/daycare" component={DaycarePage} />
+          <Route
+            path="/private-tutoring"
+            component={() => <PlannedServicePage service="private-tutoring" />}
+          />
+          <Route
+            path="/piano-lessons"
+            component={() => <PlannedServicePage service="piano-lessons" />}
+          />
+          <Route path="/book-tour" component={ContactPage} />
           <Route path="/location" component={LocationPage} />
           <Route path="/hours" component={HoursPage} />
-          <Route path="/contact" component={ContactPage} />
+          <Route path="/contact" component={() => <Redirect to="/book-tour" />} />
           <Route path="/faq" component={FAQPage} />
           <Route path="/guide" component={ParentalGuidePage} />
           <Route path="/team" component={OurTeamPage} />
+          <Route
+            path="/signup/daycare"
+            component={() => <SignupPage service="daycare" />}
+          />
+          <Route
+            path="/signup/private-tutoring"
+            component={() => <SignupPage service="private-tutoring" />}
+          />
+          <Route
+            path="/signup/piano-lessons"
+            component={() => <SignupPage service="piano-lessons" />}
+          />
           <Route component={NotFound} />
         </Switch>
       </main>
