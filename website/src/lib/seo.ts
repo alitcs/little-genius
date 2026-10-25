@@ -1,6 +1,6 @@
 export const siteName = "Little Genius Island";
 export const siteDescription =
-  "Little Genius Island is a bilingual Montessori-style daycare in Ottawa for children 11 months to 6 years, offering English and French early learning in a nurturing environment.";
+  "Little Genius Island is a bilingual Montessori daycare in Newmarket, Ontario for children 18 months to 6 years, with piano lessons and private tutoring also offered.";
 
 export const sitePhone = "905 977 1151";
 export const siteEmail = "info@littlegeniusisland.ca";

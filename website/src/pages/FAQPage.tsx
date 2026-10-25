@@ -1,73 +1,86 @@
-import FAQAccordion from "@/components/FAQAccordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import SEO from "@/components/SEO";
+import PageHeader from "@/components/site/PageHeader";
+import { Reveal } from "@/components/motion/Motion";
+import { formatPrice, piano, tutoring } from "@/data/lessons";
+import { site } from "@/data/site";
+
+const faqs = [
+  {
+    question: "What ages do you welcome?",
+    answer:
+      "Our Montessori programs cover children from 18 months to 6 years: Toddler Exploration (18–30 months), Preschool Discovery (30 months–5 years) and Kindergarten Foundations (5–6 years).",
+  },
+  {
+    question: "Is the program bilingual?",
+    answer: "Yes. Bilingual communication in English and French is part of our preschool and kindergarten programs.",
+  },
+  {
+    question: "What are the meal and snack times?",
+    answer: "Morning snack is 8:30–9:00, lunch is 11:30–12:00 and afternoon snack is 2:30–3:00.",
+  },
+  {
+    question: "How much outdoor time do children get?",
+    answer:
+      "One hour in the morning and one hour in the afternoon. Toddlers go out at 9–10 am and 2–3 pm, preschool at 10–11 am and 3–4 pm, and kindergarten at 11 am–12 pm and 4–5 pm.",
+  },
+  {
+    question: "How do I sign up?",
+    answer:
+      "Choose a service and fill out the short online form. Our team will contact you by your preferred method with details about when you can come in to start. The contract and payment are completed in person.",
+  },
+  {
+    question: "Can I pay online?",
+    answer: "Not yet. Contract signing and payment are both done in person.",
+  },
+  {
+    question: "What do piano lessons and tutoring cost?",
+    answer: `Piano is ${formatPrice(piano.rate)} per hour and tutoring is ${formatPrice(tutoring.rate)} per hour. Packages of 5 sessions save 10% and packages of 10 save 20%.`,
+  },
+  {
+    question: "Which tutoring subjects are offered?",
+    answer: "English, Math, Physics and French.",
+  },
+  {
+    question: "Can I sign up more than one child?",
+    answer: "Yes. Each sign-up form lets you add several children.",
+  },
+  {
+    question: "What are your hours?",
+    answer:
+      "Montessori daycare runs Monday to Friday, 7:00 am to 6:00 pm. Piano lessons and tutoring run Monday to Friday, 7:00 am to 6:00 pm, and Saturday and Sunday, 9:00 am to 6:00 pm.",
+  },
+];
 
 export default function FAQPage() {
-  const faqs = [
-    {
-      question: "What age groups do you accept?",
-      answer: "We welcome children from 18 months (toddlers) up to 5 years of age (pre-K). We also offer an after-school program for children up to 12 years old."
-    },
-    {
-      question: "How does the bilingual program work?",
-      answer: "Our curriculum integrates English and French seamlessly throughout the day. Educators use both languages during circle time, singing, structured activities, and free play, allowing children to absorb vocabulary naturally in context."
-    },
-    {
-      question: "Are meals and snacks provided?",
-      answer: "Yes! We provide a nutritious, chef-prepared hot lunch and two healthy snacks (morning and afternoon) daily. All meals are nut-free, and we happily accommodate other dietary restrictions and allergies."
-    },
-    {
-      question: "How long is your waitlist?",
-      answer: "Waitlist times vary depending on the age group and time of year. On average, the wait is 3 to 6 months. We highly recommend joining the waitlist as early as possible."
-    },
-    {
-      question: "What is your sick child policy?",
-      answer: "To protect all children and staff, kids exhibiting a fever, vomiting, diarrhea, or contagious symptoms must stay home. They must be symptom-free for 24 hours (or 48 hours for certain illnesses) without medication before returning."
-    },
-    {
-      question: "How much outdoor time do children get?",
-      answer: "We believe fresh air is vital! Weather permitting, children spend at least two hours outside every day in our secure, age-appropriate playground areas, engaging in gross motor play and nature exploration."
-    },
-    {
-      question: "How do you handle drop-off and pick-up security?",
-      answer: "Security is our top priority. Only pre-authorized individuals with photo ID may pick up a child. Our facility features secure fob-access entry, and all visitors must sign in at the front desk."
-    },
-    {
-      question: "What are your fees and payment options?",
-      answer: "Fees vary by age group. We require a registration fee upon enrollment. Tuition can be paid monthly via pre-authorized debit or e-transfer. Please contact us directly for our current fee schedule."
-    }
-  ];
-
   return (
-    <div className="w-full">
+    <div>
       <SEO
-        title="Little Genius Island — FAQ"
-        description="Find answers about Little Genius Island's bilingual daycare program, age groups, meals, waitlist, safety, and daily routines in Newmarket."
+        title="FAQ"
+        description="Answers about Little Genius Island's Montessori programs, meals, outdoor play, sign-up, piano lessons and tutoring in Newmarket."
         path="/faq"
       />
-      {/* Header */}
-      <section className="bg-primary/5 py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-black text-foreground mb-4">Frequently Asked Questions</h1>
-          <p className="text-lg md:text-xl text-muted-foreground">
-            Everything you need to know about our programs, policies, and daily routines.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-20 px-4">
-        <div className="max-w-3xl mx-auto">
-          <FAQAccordion items={faqs} />
-          
-          <div className="mt-12 text-center bg-muted/30 p-8 rounded-2xl border border-border">
-            <h3 className="text-xl font-bold text-foreground mb-2">Still have questions?</h3>
-            <p className="text-muted-foreground mb-4">
-              We're here to help! Contact our administrative team for more information.
-            </p>
-            <a href="mailto:info@littlegeniusisland.ca" className="inline-block bg-white text-primary border border-border shadow-sm font-bold px-6 py-3 rounded-full hover:bg-muted/50 transition-colors">
-              Email Us
+      <PageHeader eyebrow="FAQ" title="Questions, *answered*." lead="Everything you need to know before you sign up." />
+      <section className="shell pb-24 sm:pb-32">
+        <Reveal className="max-w-3xl">
+          <Accordion type="single" collapsible className="w-full border-t border-forest-900/10">
+            {faqs.map((item, index) => (
+              <AccordionItem key={item.question} value={`item-${index}`} className="border-b border-forest-900/10">
+                <AccordionTrigger className="py-6 text-left font-serif text-xl font-normal text-ink hover:no-underline">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-base leading-7 text-ink-soft">{item.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          <p className="mt-10 text-ink-soft">
+            Still wondering? Email{" "}
+            <a href={site.emailHref} className="font-semibold text-forest-700 underline underline-offset-4">
+              {site.email}
             </a>
-          </div>
-        </div>
+            .
+          </p>
+        </Reveal>
       </section>
     </div>
   );

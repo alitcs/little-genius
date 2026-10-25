@@ -4,21 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>Little Genius Island</title>
-    <meta name="description" content="Choose a service at Little Genius Island or book a Montessori daycare tour in Newmarket, Ontario." />
+    <meta name="description" content="Bilingual Montessori daycare in Newmarket, Ontario for children 18 months to 6 years. Piano lessons and private tutoring also offered." />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#345b37" />
     <meta property="og:title" content="Little Genius Island | Learning and Care" />
-    <meta property="og:description" content="Choose a service at Little Genius Island or book a Montessori daycare tour in Newmarket, Ontario." />
+    <meta property="og:description" content="Bilingual Montessori daycare in Newmarket, Ontario for children 18 months to 6 years. Piano lessons and private tutoring also offered." />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Little Genius Island" />
-    <meta property="og:url" content="https://littlegeniuss.netlify.app/" />
+    <meta property="og:url" content="https://littlegeniusisland.ca/" />
     <!--<meta property="og:image" content="../src/assets/joe.png" />-->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Little Genius Island | Learning and Care" />
-    <meta name="twitter:description" content="Choose a service at Little Genius Island or book a Montessori daycare tour in Newmarket, Ontario." />
+    <meta name="twitter:description" content="Bilingual Montessori daycare in Newmarket, Ontario for children 18 months to 6 years. Piano lessons and private tutoring also offered." />
     <!--<meta name="twitter:image" content="../src/assets/joe.png" />-->
     <link rel="canonical" href="https://littlegeniusisland.ca/" />
-    <!--<link rel="icon" type="image/svg+xml" href="../src/assets/joe.png" />-->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script type="application/ld+json">
@@ -26,13 +26,13 @@
         "@context": "https://schema.org",
         "@type": "ChildCare",
         "name": "Little Genius Island",
-        "description": "Montessori-inspired bilingual daycare in Newmarket, Ontario, with private tutoring and piano lessons.",
+        "description": "Bilingual Montessori daycare in Newmarket, Ontario, with piano lessons and private tutoring.",
         "url": "https://littlegeniusisland.ca/",
         "telephone": "905 977 1151",
         "email": "info@littlegeniusisland.ca",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "123 Maple Grove Lane",
+          "streetAddress": "78 Main St S",
           "addressLocality": "Newmarket",
           "addressRegion": "ON",
           "postalCode": "L3Y 3Y6",
@@ -45,6 +45,15 @@
     </script>
   </head>
   <body>
+        <form name="daycare-signup" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" /><input name="subject" /><input name="service" /><input name="parent_name" /><input name="email" /><input name="phone" /><input name="preferred_contact" /><input name="children_count" /><textarea name="children"></textarea><textarea name="notes"></textarea>
+    </form>
+    <form name="piano-signup" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" /><input name="subject" /><input name="service" /><input name="parent_name" /><input name="email" /><input name="phone" /><input name="preferred_contact" /><input name="children_count" /><textarea name="children"></textarea><textarea name="notes"></textarea>
+    </form>
+    <form name="tutoring-signup" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" /><input name="subject" /><input name="service" /><input name="parent_name" /><input name="email" /><input name="phone" /><input name="preferred_contact" /><input name="children_count" /><textarea name="children"></textarea><textarea name="notes"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
