@@ -112,9 +112,11 @@ export default function Navbar() {
               transition={{ delay: 0.45, duration: 0.6, ease: easeOutSoft }}
             >
               <ButtonLink href={routes.home} onClick={restartFlow}>Start sign-up</ButtonLink>
-              <ButtonLink href={routes.tour} variant="secondary" arrow={false}>
-                Book a tour
-              </ButtonLink>
+              {site.daycareLive && (
+                <ButtonLink href={routes.tour} variant="secondary" arrow={false}>
+                  Book a tour
+                </ButtonLink>
+              )}
               <a href={site.phoneHref} className="mt-4 text-center text-sm font-medium text-ink-soft">
                 Questions? Call {site.phone}
               </a>

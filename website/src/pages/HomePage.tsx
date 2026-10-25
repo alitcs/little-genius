@@ -210,13 +210,32 @@ function Choose({ onPick, onTour }: { onPick: (service: SignupService) => void; 
         What are you looking for?
       </h2>
       <ul className="mt-9 flex flex-col gap-3">
-        {services.map(({ id, title, meta, icon: Icon, main }, index) => (
+        {services.map(({ id, title, meta, icon: Icon, main }, index) => {
+          const soon = id === "daycare" && !site.daycareLive;
+          return (
           <motion.li
             key={id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 + index * 0.1, ease: easeOutSoft }}
           >
+            {soon ? (
+              <div
+                aria-disabled="true"
+                className="flex w-full items-center gap-4 rounded-3xl border border-dashed border-forest-900/15 bg-forest-50/50 p-5 text-left"
+              >
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-forest-100 text-forest-600">
+                  <Icon size={22} strokeWidth={1.6} aria-hidden="true" />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block font-serif text-2xl text-ink/70">{title}</span>
+                  <span className="block text-sm text-ink-soft">{meta}</span>
+                </span>
+                <span className="shrink-0 rounded-full bg-gold-100 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-gold-600">
+                  Coming soon
+                </span>
+              </div>
+            ) : (
             <button
               type="button"
               onClick={() => onPick(id)}
@@ -232,9 +251,12 @@ function Choose({ onPick, onTour }: { onPick: (service: SignupService) => void; 
               </span>
               <ArrowRight size={20} aria-hidden="true" className="shrink-0 text-forest-700 transition-transform duration-300 group-hover:translate-x-1" />
             </button>
+            )}
           </motion.li>
-        ))}
+          );
+        })}
       </ul>
+      {site.daycareLive && (
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -244,6 +266,7 @@ function Choose({ onPick, onTour }: { onPick: (service: SignupService) => void; 
         <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.16em] text-ink-soft">Not ready yet?</p>
         <TourPrompt onTour={onTour} />
       </motion.div>
+      )}
     </Panel>
   );
 }
@@ -384,12 +407,16 @@ function SignUp({ service }: { service: SignupService }) {
   );
 }
 
+const guard = (state: FlowState | null, fallback: Step = "welcome"): FlowState => {
+  if (!state || !state.step) state = { step: fallback, service: null };
+  if (!site.daycareLive && (state.service === "daycare" || state.step === "tour")) {
+    return { step: "choose", service: null };
+  }
+  return state;
+};
+
 export default function HomePage({ initialStep }: { initialStep?: Step }) {
-  const [state, setState] = useState<FlowState>(() => {
-    const saved = window.history.state as FlowState | null;
-    if (saved && saved.step) return saved;
-    return { step: initialStep ?? "welcome", service: null };
-  });
+  const [state, setState] = useState<FlowState>(() => guard(window.history.state as FlowState | null, initialStep));
 
   const go = useCallback((next: FlowState) => {
     window.history.pushState(next, "");
@@ -399,8 +426,7 @@ export default function HomePage({ initialStep }: { initialStep?: Step }) {
 
   useEffect(() => {
     const onPop = (event: PopStateEvent) => {
-      const next = event.state as FlowState | null;
-      setState(next && next.step ? next : { step: "welcome", service: null });
+      setState(guard(event.state as FlowState | null));
       window.scrollTo({ top: 0 });
     };
     window.addEventListener("popstate", onPop);
@@ -474,7 +500,7 @@ export default function HomePage({ initialStep }: { initialStep?: Step }) {
         {step === "signup" && service && <SignUp key="signup" service={service} />}
       </AnimatePresence>
 
-      {step === "welcome" && (
+      {step === "welcome" && site.daycareLive && (
         <p className="sr-only">
           <a href={routes.tour}>Book a tour</a>
         </p>

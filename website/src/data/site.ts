@@ -24,6 +24,9 @@ export const site = {
   },
   // First bookable hour (24h clock) on weekends for piano and tutoring.
   lessonWeekendStart: 9,
+  // Flip to true when the Montessori daycare opens for sign-ups and tours.
+  // While false, the daycare shows "Coming soon" and its sign-up and tour paths are hidden.
+  daycareLive: false,
   // Set to a string such as "$1,250" to show the monthly daycare tuition on the site.
   // While this is null, the site tells families the fee is shared when they visit.
   daycareMonthlyTuition: null as string | null,
