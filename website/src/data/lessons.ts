@@ -40,7 +40,7 @@ export const tutoring: LessonService = {
     { sessions: 5, label: "5 sessions", price: 179.99, savings: "Save 10%" },
     { sessions: 10, label: "10 sessions", price: 319.99, savings: "Save 20%" },
   ],
-  subjects: ["English", "Math", "Physics", "French"],
+  subjects: ["English", "Math", "French"],
 };
 
 export const lessonServices = { piano, tutoring };

@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     question: "Which tutoring subjects are offered?",
-    answer: "English, Math, Physics and French.",
+    answer: `${tutoring.subjects?.join(", ").replace(/, ([^,]*)$/, " and $1")}.`,
   },
   {
     question: "Can I sign up more than one child?",
